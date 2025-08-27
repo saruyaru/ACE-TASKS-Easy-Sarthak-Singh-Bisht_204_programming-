@@ -1,0 +1,44 @@
+import emoji
+library = {}
+
+while True:
+    print("What do you want to perform?")
+    print("1. Add Book")
+    print("2. Search Book")
+    print("3. Show All Books")
+    print("4. Exit")
+    choice = input("Enter choice (1-4): ")
+
+    if choice == "1":
+        title = input("Enter book title: ")
+        author = input("Enter author name: ")
+        library[title] = author
+        print(f'Added "{title}" by {author}.')
+
+    elif choice == "2":
+        search = input("Enter title or author to search: ").lower()
+        found_any = False
+        for title, author in library.items():
+            if search in title.lower() or search in author.lower():
+                print(f'"{title}" by {author}')
+                found_any = True
+        if not found_any:
+            print("No matches found.")
+        print()
+
+    
+    elif choice == "3":
+        if library:
+            print("All Books:")
+            for title, author in library.items():
+                print(f'"{title}" by {author}')
+        else:
+            print("No books added yet.")
+        print()
+
+    elif choice == "4":
+        print("Exiting... Bye!")
+        break
+
+    else:
+        print("Invalid choice, please enter 1, 2, 3, or 4.")
