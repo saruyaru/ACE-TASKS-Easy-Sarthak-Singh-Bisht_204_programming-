@@ -1,0 +1,17 @@
+print("Welcome to the Word Frequency Counter! 📜🔍")
+print("Type or paste your paragraph below and discover the top 3 words hidden in your text!\n")
+user_input=input("Enter the paragraph :) :-")
+words=user_input.split()
+length=len(words)
+frequency={}
+for i in range(length):
+    if words[i] in frequency:
+        frequency[words[i]]+=1
+    else:
+        frequency[words[i]]=1
+sorted_freq=sorted(frequency.items(),key=lambda item: item[1] , reverse=True)[:3]
+top1=sorted_freq[0][0]
+top2=sorted_freq[1][0]
+top3=sorted_freq[2][0]
+print("The top 3 words with freq highest freq are :- ",top1,',',top2,',',top3,',','respectively')
+
