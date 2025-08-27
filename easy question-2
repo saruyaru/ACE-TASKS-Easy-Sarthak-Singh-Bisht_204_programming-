@@ -1,0 +1,45 @@
+import emoji
+score=0
+print("="*35)
+print("      ACE TASK: QUIZ CHALLENGE")
+print("="*35)
+print("Welcome to the Quiz!")
+
+def ask_question(prompt, correct_answer):
+    while True:
+        ans = input(prompt).upper()
+        if ans not in ['A', 'B', 'C', 'D']:
+            print("Invalid input. Please type only A, B, C, or D.\n")
+            continue
+        return ans == correct_answer   #returns true if the ans is correct :)
+
+# Question 1
+if ask_question("1. If a cat has 9 lives and loses 8, how many does it have left?\nA) 9\nB) 8\nC) 1\nD) 0\nYour answer: ","C"):
+    score += 1
+
+# Question 2
+if ask_question("2. What is the capital of France?\nA) Berlin\nB) Madrid\nC) Paris\nD) Rome\nYour answer: ","C"):
+    score += 1
+
+# Question 3
+if ask_question("3. What gets wetter the more it dries?\nA) Towel\nB) Rain\nC) Snow\nD) Fire\nYour answer: ","A"):
+    score += 1
+
+# Question 4
+if ask_question("4. What is 2 + 2 * 2?\nA) 6\nB) 8\nC) 4\nD) 2\nYour answer: ","A"):
+    score += 1
+
+# Question 5
+if ask_question("5. Which element loves to bond and forms water?\nA) Oxygen\nB) Carbon\nC) Hydrogen\nD) Nitrogen\nYour answer: ","C"):
+    score += 1
+
+
+print("\nQuiz finished! Your score is ",score," out of 5.")
+
+if score == 5:
+    print(emoji.emojize(":trophy: Perfect! You're an ACE!"))
+elif score >= 3:
+    print(emoji.emojize(":clapping_hands: Nice work! You aced most tasks."))
+else:
+    print(emoji.emojize(":seedling: Keep trying! Every expert was once a beginner."))
+
