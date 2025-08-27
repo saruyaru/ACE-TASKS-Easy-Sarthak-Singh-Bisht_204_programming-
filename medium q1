@@ -1,4 +1,3 @@
-import emoji
 library = {}
 
 while True:
